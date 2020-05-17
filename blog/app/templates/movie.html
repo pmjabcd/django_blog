@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% for each_movie in ml %}
+        <a href="{% url 'detail_i_will_use_in_html' each_movie.pk %}">{{each_movie.title}}</a>
+        <!-- ml(movie list)에서 각 영화를 누르면, detail로 가는 기능을 만들고 싶은것
+            그런데 각 each_movie에는 pk라고 고유 번호가 있어서 이걸 불러와줘야 주소를 알려주는거 
+             한 줄 정리! href가 어디로 가라!는건데, pk까지 알려줘야지 정확히 간다!!!! -->
+        <!-- 하나씩 보이기 위해서 for문을 쓴거고, 
+             이미 ml에서 영화 하나씩은 가지고 오는걸 맨 위에서 만들어준거지(카테고리, 시간... 다 포함된거)
+             title만을 가지고 오기 위해서 each_movie.title을 해주는거 -->
+             <!-- each_movie.title에 중괄호 2개  쓰인 이유는, each movie > ml > views 이기에 중괄호 2개로 -->
+    {% endfor %}
+</body>
